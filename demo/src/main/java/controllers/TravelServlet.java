@@ -1,4 +1,5 @@
-package control;
+package controllers;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -10,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import model.TravelModel;
-import model.beans.TravelBean;
+import models.TravelModel;
+import data.beans.TravelBean;
 
 
 @WebServlet("/travel")
@@ -23,7 +24,7 @@ public class TravelServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 
-        String jspPage = "/redir";
+        String jspPage = "Dashboard.jsp";
 
         try {
             TravelModel travel = new TravelModel();
@@ -49,15 +50,14 @@ public class TravelServlet extends HttpServlet{
                 travel.insertNewTravel(codice, nome, prezzo, giorni, citta, stato, descrizione, foto);
             }
 
-
             List<TravelBean> listOfTravels = travel.getAll();
-            request.setAttribute("travels", listOfTravels);
+            request.setAttribute("catalogo", listOfTravels);
             
         } catch (Exception e) {
             jspPage = "Error.jsp";
             request.setAttribute("error", e.getMessage());
         }
 
-        request.getRequestDispatcher(jspPage).forward(request, response);
+        request.getRequestDispatcher(jspPage).include(request, response);
     }
 }

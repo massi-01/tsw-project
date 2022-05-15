@@ -1,4 +1,4 @@
-package model.beans;
+package data.beans;
 
 public class TravelBean {
 

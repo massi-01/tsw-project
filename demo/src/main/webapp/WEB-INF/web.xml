@@ -13,10 +13,11 @@
   <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-<!--
+
+  <!-- Redirect Servlet -->
   <servlet>
     <servlet-name>redir</servlet-name>
-    <servlet-class>demo.control.RedirectWithData</servlet-class>
+    <servlet-class>demo.controllers.RedirectWithData</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -24,25 +25,27 @@
     <url-pattern>/travel</url-pattern>
   </servlet-mapping>
 
+
+  <!-- Login Servlet -->
   <servlet>
     <servlet-name>login</servlet-name>
-    <servlet-class>demo.control.LoginServlet</servlet-class>
+    <servlet-class>demo.controllers.LoginServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>login</servlet-name>
-    <url-pattern>/demo/login</url-pattern>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
-
+  <!-- Logout Servlet -->
   <servlet>
     <servlet-name>logout</servlet-name>
-    <servlet-class>demo.control.LogoutServlet</servlet-class>
+    <servlet-class>demo.controllers.LogoutServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>logout</servlet-name>
-    <url-pattern>/demo/logout</url-pattern>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
--->
+
 </web-app>
