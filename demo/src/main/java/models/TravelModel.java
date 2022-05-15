@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-import model.beans.*;
+import data.beans.*;
 
 public class TravelModel {
     

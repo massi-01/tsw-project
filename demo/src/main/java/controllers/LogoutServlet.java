@@ -1,4 +1,4 @@
-package control;
+package controllers;
 
 import java.io.IOException;
 
@@ -14,9 +14,12 @@ public class LogoutServlet extends HttpServlet{
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         
-        HttpSession session = request.getSession();
-        session.removeAttribute("userID");
-        session.invalidate();
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        HttpSession session = request.getSession(false);
+        if(session != null){
+            session.removeAttribute("userID");
+            session.invalidate();
+        }
+
+        response.sendRedirect("login.jsp");
     }
 }

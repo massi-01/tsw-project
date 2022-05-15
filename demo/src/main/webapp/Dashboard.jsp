@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="model.beans.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="model.TravelModel" %>
+<%@ page import="models.TravelModel" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
@@ -80,7 +80,7 @@
                 <!-- </div> -->
             </div>
         
-        <a href="/demo/logout">Logout</a>
+        <a href="/logout">Logout</a>
         <script src="scripts/script.js"></script>
         <script>history.forward();</script>
     </body>
